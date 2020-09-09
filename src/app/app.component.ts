@@ -9,41 +9,17 @@ import { Note } from './models/note.model';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'google-keep';
 
-  noteGroup: FormGroup;
-  allNotes: Note[] = [];
+  addedNote: Note;
 
-  constructor(
-    private fb: FormBuilder,
-    private notesService: NotesService) {
+  constructor() {
   }
 
   ngOnInit(): void {
-    this.noteGroup = this.fb.group({
-      title: ['', [Validators.required]],
-      text: ['', Validators.required]
-    });
 
-    this.getNotes();
   }
 
-  saveNote() {
-    if (!this.noteGroup.invalid) {
-      const note = new Note(this.noteGroup.get('title').value, this.noteGroup.get('text').value);
-      this.allNotes.push(note);
-      this.noteGroup.reset();
-      this.notesService.addNotes(note).subscribe(res => {
-      },
-        err => {
-          this.allNotes.pop();
-        });
-    }
-  }
-
-  getNotes() {
-    this.notesService.getNotes().subscribe(data => {
-      this.allNotes = data;
-    });
+  noteAddedEvent(note: Note) {
+    this.addedNote = { ...note };
   }
 }

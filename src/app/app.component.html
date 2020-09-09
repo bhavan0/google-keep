@@ -1,33 +1,5 @@
-<app-header-component></app-header-component>
-<mat-accordion>
-  <mat-expansion-panel>
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        Take a note
-      </mat-panel-title>
-    </mat-expansion-panel-header>
-
-    <div [formGroup]="noteGroup">
-      <mat-label>Title</mat-label>
-      <input matInput type="text" formControlName="title">
-
-      <mat-label>Text</mat-label>
-      <textarea matInput formControlName="text"></textarea>
-
-      <button (click)="saveNote()">Done</button>
-    </div>
-  </mat-expansion-panel>
-</mat-accordion>
-
-<h1>Existing notes</h1>
-
-<div *ngFor="let item of allNotes">
-  <mat-card>
-    <mat-card-header>
-      <h3>{{item.title}}</h3>
-    </mat-card-header>
-    <mat-card-content>
-      {{item.text}}
-    </mat-card-content>
-  </mat-card>
+<div class="mat-app-background">
+    <app-header-component></app-header-component>
+    <app-add-note (noteAddedEvent)="noteAddedEvent($event)"></app-add-note>
+    <app-existing-notes [addedNote]="addedNote"></app-existing-notes>
 </div>

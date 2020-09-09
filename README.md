@@ -1,27 +1,20 @@
-# GoogleKeep
+## How to Run the Application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.1.
+Run `npx json-server --watch db.json --port 3000` for running the local json-server. Runs by default in `http://localhost:3000/` as the application is pointing to that port for data.
 
-## Development server
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Project Information
 
-## Code scaffolding
+Basic Angular project done to see how json-server can be used in angular application to perform basic api tasks.
+Also used angular material, bootstrap for the UI.
+PS: not a UI developer so ignore the bad UI :P
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Actions possible in application:
+1- View existing notes
+2- Add new Notes
+3- Edit Notes
+4- Delete Notes
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+The data entered is saved in db.json
+For more information on json-server refer to : https://github.com/typicode/json-server

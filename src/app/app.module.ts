@@ -11,11 +11,18 @@ import { MatInputModule } from '@angular/material/input';
 import { TextFieldModule } from '@angular/cdk/text-field';
 import { HttpClientModule } from '@angular/common/http';
 import { MatCardModule } from '@angular/material/card';
+import { ExistingNotesComponent } from './existing-notes/existing-notes.component';
+import { AddNoteComponent } from './add-note/add-note.component';
+import { EditNoteComponent } from './edit-note/edit-note.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponentComponent
+    HeaderComponentComponent,
+    ExistingNotesComponent,
+    AddNoteComponent,
+    EditNoteComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +35,8 @@ import { MatCardModule } from '@angular/material/card';
     MatInputModule,
     TextFieldModule,
     HttpClientModule,
-    MatCardModule
+    MatCardModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,31 @@
+<h1>Existing notes</h1>
+
+<div class="card-columns">
+    <div class="card" *ngFor="let note of allNotes">
+        <div class="card-body text-center">
+            <mat-card>
+                <div class="row">
+                    <div class="col-7"></div>
+                    <div class="col-2">
+                        <a (click)="editNote(note)" class="pointer">
+                            <i class="fa fa-edit"></i>
+                        </a>
+                    </div>
+                    <div class="col-1"></div>
+                    <div class="col-2">
+                        <a (click)="deleteNote(note)" class="pointer">
+                            <i class="fa fa-trash"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <mat-card-header class="card-header border-bottom">
+                    <h6>{{note.title}}</h6>
+                </mat-card-header>
+                <mat-card-content>
+                    <p>{{note.text}}</p>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>

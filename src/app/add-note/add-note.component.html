@@ -1,0 +1,35 @@
+<div class="row">
+    <mat-accordion class="col-6">
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Take a note
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+
+            <div [formGroup]="noteGroup">
+                <div class="row">
+                    <div class="col-4">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Title</mat-label>
+                            <input matInput type="text" formControlName="title">
+                        </mat-form-field>
+                    </div>
+
+                    <div class="col-2"></div>
+
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Text</mat-label>
+                            <textarea matInput formControlName="text"></textarea>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+            <button (click)="saveNote()">Done</button>
+
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>
